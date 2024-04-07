@@ -1,0 +1,6 @@
+@AutoAssistant_Challenge_HostAddress = http://localhost:5096
+
+GET {{AutoAssistant_Challenge_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
