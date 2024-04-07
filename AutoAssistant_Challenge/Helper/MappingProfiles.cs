@@ -9,6 +9,7 @@ namespace AutoAssistant_Challenge.Helper
         public MappingProfiles() 
         {
             CreateMap<PessoaModel, PessoaDto>();
+            CreateMap<ProdutoModel, ProdutoDto>();
         }
     }
 }
