@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AutoAssistant_Challenge.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Sprint4 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,16 +17,16 @@ namespace AutoAssistant_Challenge.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Cep = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Logradouro = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Complemento = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Bairro = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Localidade = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UF = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IBGE = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    GIA = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DDD = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SIAFI = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Cep = table.Column<string>(type: "varchar(9)", nullable: false),
+                    Logradouro = table.Column<string>(type: "varchar(50)", nullable: false),
+                    Complemento = table.Column<string>(type: "varchar(20)", nullable: false),
+                    Bairro = table.Column<string>(type: "varchar(15)", nullable: false),
+                    Localidade = table.Column<string>(type: "varchar(15)", nullable: false),
+                    UF = table.Column<string>(type: "varchar(5)", nullable: false),
+                    IBGE = table.Column<string>(type: "varchar(7)", nullable: false),
+                    GIA = table.Column<string>(type: "varchar(4)", nullable: false),
+                    DDD = table.Column<string>(type: "varchar(2)", nullable: false),
+                    SIAFI = table.Column<string>(type: "varchar(4)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -39,8 +39,8 @@ namespace AutoAssistant_Challenge.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Nome = table.Column<string>(type: "varchar(30)", nullable: false),
+                    Descricao = table.Column<string>(type: "varchar(60)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -54,12 +54,12 @@ namespace AutoAssistant_Challenge.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     EnderecoId = table.Column<int>(type: "int", nullable: false),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Nome = table.Column<string>(type: "varchar(50)", nullable: false),
                     Sexo = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Telefone = table.Column<long>(type: "bigint", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "varchar(30)", nullable: false),
                     Cnpj = table.Column<long>(type: "bigint", nullable: false),
-                    Senha = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Senha = table.Column<string>(type: "varchar(20)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -78,8 +78,8 @@ namespace AutoAssistant_Challenge.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Nome = table.Column<string>(type: "varchar(30)", nullable: false),
+                    Descricao = table.Column<string>(type: "varchar(60)", nullable: false),
                     TipoProdutoId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -99,9 +99,9 @@ namespace AutoAssistant_Challenge.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Nome = table.Column<string>(type: "varchar(50)", nullable: false),
                     PessoaId = table.Column<int>(type: "int", nullable: false),
-                    Reputacao = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Reputacao = table.Column<string>(type: "varchar(100)", nullable: false)
                 },
                 constraints: table =>
                 {
